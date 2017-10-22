@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .title {font-family: Arial, Helvetica, sans-serif;font-size: 13pt;}
+        </style>
+    </head>
+
+    <body>
+
+        <script src="//unpkg.com/mithril/mithril.js"></script>
+        <script>
+        function share() {
+            if (!navigator.share) {
+                console.log('omg you don\'t have share. sad day for you.');
+                return;
+            }
+            navigator.share({
+                title: 'Web Fundamentals',
+                text: 'Check out Web Fundamentals — it rocks!',
+                url: 'https://developers.google.com/web'
+            })
+            .then(function (r) {
+                console.log('success', r);
+            })
+            .catch(function (e) {
+                console.log(e);
+            })
+        }
+        var root = document.body;
+        var View1 = {
+            view: function() {
+                return m("main", [
+                    m("h1", {class: "title"}, "My first app"),
+                    m("button", {onClick: share()}, "share things.. if you can")
+                ])
+            }
+        }
+        m.mount(root, View1);
+
+
+
+
+
+    </script>
+    </body>
+</html>
