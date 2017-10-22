@@ -1,0 +1,18 @@
+{
+  "name": "mithril-material",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack src/index.js bin/app.js --watch"
+  },
+  "dependencies": {
+    "material-components-mithril": "^0.1.0",
+    "mithril": "^1.1.5",
+    "webpack": "^3.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "jshint": "^2.9.5"
+  }
+}

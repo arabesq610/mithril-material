@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+        
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <script src="https://unpkg.com/mithril/mithril.js"></script>
+        <script src="https://unpkg.com/material-components-mithril/"></script>
+            
+
+        <script>
+            var share = function () {
+                if (!navigator.share) {
+                    return;
+                }
+                navigator.share({
+                    title: 'Web Fundamentals',
+                    text: 'Check out Web Fundamentals — it rocks!',
+                    url: 'https://developers.google.com/web'
+                })
+                .then(function () {
+                    console.log('Successful share');
+                })
+                .catch(function (error) {
+                    console.log('Error sharing', error);
+                });
+            };
+            var button = {
+                view: function() {
+                    return m(materialComponentsMithril.button, "Submit");
+                }
+            };
+            m.mount(document.body, button);
+        </script>
+
+
+    </body>
+</html>
